@@ -1,16 +1,37 @@
 import React from 'react';
+import {Route, NavLink} from 'react-router-dom'
 import './App.css';
+
+import Ipad from './Components/Ipad'
+
+
 import apple from './apple.svg'
+import search from './images/search.svg'
 
 function App() {
   return (
     <div className="App">
-      <nav>
-        <img src={apple} alt="apple logo" />
-        
+      <nav className="nav-bar">
+        <NavLink to="/" className="nav-links">
+          <img src={apple} alt="apple logo" />
+        </NavLink>
+        <NavLink className="nav-links">Mac</NavLink>
+        <NavLink to="/ipad" className="nav-links">iPad</NavLink>
+        <NavLink className="nav-links">iPhone</NavLink>
+        <NavLink className="nav-links">Watch</NavLink>
+        <NavLink className="nav-links">TV</NavLink>
+        <NavLink className="nav-links">Music</NavLink>
+        <NavLink className="nav-links">Support</NavLink>
+        <img src={search} alt="search logo" />
       </nav>
 
-
+      <Route path="/" />
+      <Route />
+      <Route path="/ipad" component={Ipad}/>
+      <Route />
+      <Route />
+      <Route />
+      <Route />
     </div>
   );
 }
